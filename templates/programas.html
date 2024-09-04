@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+  <header class="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-white px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+    <a href="#" class="flex items-center gap-2 text-lg font-semibold">
+      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="14" y="3" rx="1" /><rect width="7" height="7" x="14" y="14" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" /></svg>
+      <span>Dashboard</span>
+    </a>
+    <div class="ml-auto flex items-center gap-2">
+      <input type="search" placeholder="Search programs..." class="w-full rounded-lg bg-white pl-8 md:w-[200px] lg:w-[336px] border border-gray-300 focus:outline-none">
+      <button class="bg-transparent border border-gray-300 p-2 rounded-full">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" /></svg>
+        <span class="sr-only">Filter</span>
+      </button>
+      <div class="relative">
+        <button class="bg-transparent border border-gray-300 p-2 rounded-full overflow-hidden" id="avatarButton">
+          <img src="/placeholder.svg" width="36" height="36" alt="Avatar" class="overflow-hidden rounded-full" style="aspect-ratio: 36/36; object-fit: cover;">
+        </button>
+        <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg hidden" id="menu">
+          <div class="px-4 py-2 text-gray-700 font-semibold">My Account</div>
+          <div class="border-t border-gray-200"></div>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Support</a>
+          <div class="border-t border-gray-200"></div>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 sm:p-6">
+    <!-- Card: Technology -->
+    <div class="bg-white shadow-md rounded-md overflow-hidden group">
+      <div class="flex items-center gap-4 p-4">
+        <div class="bg-blue-500 rounded-md flex items-center justify-center w-12 h-12">
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Technology</h2>
+          <p class="text-sm text-gray-500">Explore the latest tech trends and innovations.</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+          <span>123 discussions</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          <span>10,000 members</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+      </div>
+    </div>
+
+    <!-- Card: Sports -->
+    <div class="bg-white shadow-md rounded-md overflow-hidden group">
+      <div class="flex items-center gap-4 p-4">
+        <div class="bg-green-500 rounded-md flex items-center justify-center w-12 h-12">
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z" /></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Sports</h2>
+          <p class="text-sm text-gray-500">Stay updated with the latest sports news.</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+          <span>456 discussions</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          <span>8,000 members</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+      </div>
+    </div>
+
+    <!-- Card: Entertainment -->
+    <div class="bg-white shadow-md rounded-md overflow-hidden group">
+      <div class="flex items-center gap-4 p-4">
+        <div class="bg-purple-500 rounded-md flex items-center justify-center w-12 h-12">
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8A4 4 0 0 0 17 4H7A4 4 0 0 0 3 8v8a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4zM8 12h8" /></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Entertainment</h2>
+          <p class="text-sm text-gray-500">Catch up on the latest in entertainment.</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+          <span>789 discussions</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          <span>12,000 members</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+      </div>
+    </div>
+
+    <!-- Card: Business -->
+    <div class="bg-white shadow-md rounded-md overflow-hidden group">
+      <div class="flex items-center gap-4 p-4">
+        <div class="bg-yellow-500 rounded-md flex items-center justify-center w-12 h-12">
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 6a4 4 0 0 0-8 0v2H2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h-6V6z" /></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Business</h2>
+          <p class="text-sm text-gray-500">Get insights into the business world.</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+          <span>321 discussions</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          <span>15,000 members</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+      </div>
+    </div>
+
+    <!-- Card: Politics -->
+    <div class="bg-white shadow-md rounded-md overflow-hidden group">
+      <div class="flex items-center gap-4 p-4">
+        <div class="bg-red-500 rounded-md flex items-center justify-center w-12 h-12">
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10a8.38 8.38 0 0 1-7 8.25V21h-4v-2.75A8.38 8.38 0 0 1 3 10" /><circle cx="12" cy="4" r="4" /></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Politics</h2>
+          <p class="text-sm text-gray-500">Get the latest updates in politics.</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+          <span>987 discussions</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          <span>7,000 members</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+      </div>
+    </div>
+
+    <!-- Card: Music -->
+    <div class="bg-white shadow-md rounded-md overflow-hidden group">
+      <div class="flex items-center gap-4 p-4">
+        <div class="bg-indigo-500 rounded-md flex items-center justify-center w-12 h-12">
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Music</h2>
+          <p class="text-sm text-gray-500">Discover the latest in the music scene.</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+          <span>1,200 discussions</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          <span>10,000 members</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+      </div>
+    </div>
+
+    <!-- Card: Science -->
+    <div class="bg-white shadow-md rounded-md overflow-hidden group">
+      <div class="flex items-center gap-4 p-4">
+        <div class="bg-indigo-500 rounded-md flex items-center justify-center w-12 h-12">
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M12 3v18M5 19l7-7-7-7" /></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Science</h2>
+          <p class="text-sm text-gray-500">Explore the latest discoveries in science.</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+          <span>500 discussions</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          <span>9,000 members</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+      </div>
+    </div>
+
+    <!-- Card: Art -->
+    <div class="bg-white shadow-md rounded-md overflow-hidden group">
+      <div class="flex items-center gap-4 p-4">
+        <div class="bg-pink-500 rounded-md flex items-center justify-center w-12 h-12">
+          <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h6l3 9L21 3H9l-3 9z" /></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Art</h2>
+          <p class="text-sm text-gray-500">Dive into the world of fine arts.</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+          <span>200 discussions</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          <span>3,000 members</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+      </div>
+    </div>
+
+    <!-- Card: History -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-yellow-500 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 2a16 16 0 0 0-16 16h6a6 6 0 1 1 6 6V10a2 2 0 0 1 2-2h2Z" />
+      </svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">History</h2>
+      <p class="text-sm text-gray-500">Uncover the events of the past.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+      </svg>
+      <span>350 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg>
+      <span>6,500 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+  <!-- Card: Philosophy -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-green-500 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a9.19 9.19 0 0 1 9 9h-4a5 5 0 0 0-10 0H3a9.19 9.19 0 0 1 9-9Z" /></svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Philosophy</h2>
+      <p class="text-sm text-gray-500">Engage in deep philosophical discussions.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+      <span>420 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+      <span>2,000 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Medio Ambiente -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-green-600 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z" />
+        <path d="M9 9h6M9 15h6M9 12h6M9 18h6M5 21h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1z" />
+      </svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Medio Ambiente</h2>
+      <p class="text-sm text-gray-500">Learn about environmental issues and solutions.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+      </svg>
+      <span>210 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg>
+      <span>4,000 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Fashion -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-purple-500 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v15M6 12l6-6 6 6" /></svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Fashion</h2>
+      <p class="text-sm text-gray-500">Stay updated with the latest fashion trends.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+      <span>180 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+      <span>2,200 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Beauty -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-pink-500 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l-7-7 2.83-2.83L12 13.34l8.18-8.18L23 7Z" /></svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Beauty</h2>
+      <p class="text-sm text-gray-500">Explore the art of beauty and wellness.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+      <span>250 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+      <span>1,800 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Health -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-blue-500 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Health</h2>
+      <p class="text-sm text-gray-500">Learn how to improve your well-being.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+      <span>400 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+      <span>5,000 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Travel -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-yellow-500 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20m8-8H4" /></svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Travel</h2>
+      <p class="text-sm text-gray-500">Plan your next adventure.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+      <span>500 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+      <span>3,000 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Gastronomy -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-red-500 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20m8-8H4" /></svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Gastronomy</h2>
+      <p class="text-sm text-gray-500">Explore the world of culinary arts.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+      <span>600 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+      <span>2,200 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Humanistic and Social -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-purple-500 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 12H8" /><path d="M16 8H8m8 8H8m-4 4a8 8 0 1 1 16 0H4Z" /></svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Humanistic and Social</h2>
+      <p class="text-sm text-gray-500">Dive deep into societal and cultural studies.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
+      <span>700 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+      <span>2,500 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Espiritualidad y Religión -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-indigo-600 rounded-md flex items-center justify-center w-12 h-12">
+      <span class="text-white text-2xl">🙏</span>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Espiritualidad y Religión</h2>
+      <p class="text-sm text-gray-500">Explore the realms of spirituality and religion.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+      </svg>
+      <span>180 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg>
+      <span>3,500 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Automóviles -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-gray-700 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 11h14l2 6H3l2-6zM3 6h18a1 1 0 0 1 1 1v1H2V7a1 1 0 0 1 1-1zM6 19a3 3 0 1 1 6 0H6zm12 0a3 3 0 1 1 6 0h-6z" />
+      </svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Automóviles</h2>
+      <p class="text-sm text-gray-500">Explore the world of cars and automotive technology.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+      </svg>
+      <span>290 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg>
+      <span>5,000 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Deportes Extremos -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-red-600 rounded-md flex items-center justify-center w-12 h-12">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10l7-7 7 7-7 7-7-7z" />
+        <path d="M3 12l7 7 7-7-7-7-7 7z" />
+      </svg>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Deportes Extremos</h2>
+      <p class="text-sm text-gray-500">Dive into the world of extreme sports and adventures.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+      </svg>
+      <span>420 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg>
+      <span>7,500 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Películas -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-teal-600 rounded-md flex items-center justify-center w-12 h-12 text-white text-2xl">
+      📽
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Películas</h2>
+      <p class="text-sm text-gray-500">Discover and discuss the latest films and classics.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+      </svg>
+      <span>320 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg>
+      <span>6,000 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+<!-- Card: Matemáticas -->
+<div class="bg-white shadow-md rounded-md overflow-hidden group">
+  <div class="flex items-center gap-4 p-4">
+    <div class="bg-blue-600 rounded-md flex items-center justify-center w-12 h-12">
+      <span class="text-white text-2xl">📐</span>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold">Matemáticas</h2>
+      <p class="text-sm text-gray-500">Delve into mathematical concepts and theories.</p>
+    </div>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+      </svg>
+      <span>250 discussions</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg>
+      <span>4,800 members</span>
+    </div>
+  </div>
+  <div class="p-4">
+    <button class="w-full bg-transparent border border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-100">View Program</button>
+  </div>
+</div>
+
+</main>
+</section>
+
+<script>
+  document.getElementById('avatarButton').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+  });
+
+  document.addEventListener('click', function(e) {
+    var menu = document.getElementById('menu');
+    var avatarButton = document.getElementById('avatarButton');
+
+    if (!avatarButton.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
+  });
+</script>
+</body>
+</html>

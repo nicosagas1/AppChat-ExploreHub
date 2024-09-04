@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .online-indicator {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+        }
+        .chat-message {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="flex h-screen bg-green-50">
+
+    <!-- Sidebar -->
+    <div class="w-64 bg-green-800 text-white p-4">
+        <h2 class="text-xl font-bold mb-4 flex items-center">
+            <!-- Users icon as SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2h5m5-14a4 4 0 110-8 4 4 0 010 8zM12 20v-6m0 0H8m4 0h4" />
+            </svg>
+            Users
+        </h2>
+        <div class="space-y-2">
+            <!-- Users List -->
+            <div class="flex items-center p-2 bg-black rounded-lg border border-green-500">
+                <span class="online-indicator bg-green-400"></span>
+                <span class="text-green-400">Alice</span>
+            </div>
+            <div class="flex items-center p-2 bg-black rounded-lg border border-green-500">
+                <span class="online-indicator bg-green-400"></span>
+                <span class="text-green-400">Bob</span>
+            </div>
+            <div class="flex items-center p-2 bg-black rounded-lg border border-green-500">
+                <span class="online-indicator bg-red-500"></span>
+                <span class="text-red-500">Charlie</span>
+            </div>
+            <div class="flex items-center p-2 bg-black rounded-lg border border-green-500">
+                <span class="online-indicator bg-green-400"></span>
+                <span class="text-green-400">David</span>
+            </div>
+            <div class="flex items-center p-2 bg-black rounded-lg border border-green-500">
+                <span class="online-indicator bg-red-500"></span>
+                <span class="text-red-500">Eve</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Chat Area -->
+    <div class="flex-1 flex flex-col">
+        <!-- Chat Messages -->
+        <div class="flex-1 p-4 overflow-y-auto">
+            <!-- Message from Alice -->
+            <div class="chat-message">
+                <div class="font-bold text-green-800">Alice</div>
+                <div class="bg-white p-2 rounded-lg shadow">
+                    Hey everyone! How are you doing?
+                </div>
+                <div class="text-xs text-gray-500 mt-1">10:00 AM</div>
+            </div>
+            <!-- Message from Bob -->
+            <div class="chat-message">
+                <div class="font-bold text-green-800">Bob</div>
+                <div class="bg-white p-2 rounded-lg shadow">
+                    Hi Alice! I'm doing great, thanks for asking.
+                </div>
+                <div class="text-xs text-gray-500 mt-1">10:02 AM</div>
+            </div>
+            <!-- Message from David -->
+            <div class="chat-message">
+                <div class="font-bold text-green-800">David</div>
+                <div class="bg-white p-2 rounded-lg shadow">
+                    Hello! Just joined the chat. What's the topic?
+                </div>
+                <div class="text-xs text-gray-500 mt-1">10:05 AM</div>
+            </div>
+            <!-- Message with image media -->
+            <div class="chat-message">
+                <div class="font-bold text-green-800">Alice</div>
+                <div class="mb-2">
+                    <div class="bg-white p-2 rounded-lg shadow">
+                        <p class="text-sm text-gray-500 mb-1">A beautiful sunset over the ocean</p>
+                        <img src="/placeholder.svg?height=200&width=300" alt="A beautiful sunset over the ocean" class="max-w-xs rounded-lg">
+                    </div>
+                </div>
+                <div class="bg-white p-2 rounded-lg shadow">
+                    Check out this cool image!
+                </div>
+                <div class="text-xs text-gray-500 mt-1">10:10 AM</div>
+            </div>
+        </div>
+
+        <!-- Message Input -->
+        <div class="p-4 bg-green-100">
+            <div class="flex items-center space-x-2">
+                <input type="text" placeholder="Type your message..." class="flex-1 p-2 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <!-- Image Button -->
+                <button class="p-2 rounded-lg bg-white text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <!-- Image Icon as SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zM4 5h12v10H4V5zm3.5 4.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm-1.497 3.372a.75.75 0 01.43-1.372h8.134a.75.75 0 01.537 1.285l-2.265 2.265a1.5 1.5 0 01-2.123 0l-1.572-1.573a.5.5 0 00-.708.707l1.572 1.573a2.5 2.5 0 003.536 0l2.265-2.265a2.25 2.25 0 00-1.607-3.835H6.932a2.25 2.25 0 00-1.929 3.31z"/>
+                    </svg>
+                </button>
+                <!-- Video Button -->
+                <button class="p-2 rounded-lg bg-white text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <!-- Video Icon as SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M6 4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V6a2 2 0 00-2-2H6zm8 9a1 1 0 11-2 0V7a1 1 0 012 0v6z"/>
+                    </svg>
+                </button>
+                <!-- Audio Button -->
+                <button class="p-2 rounded-lg bg-white text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <!-- Mic Icon as SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 12a2 2 0 002-2V6a2 2 0 00-4 0v4a2 2 0 002 2zm-7-2a7 7 0 1114 0 7.003 7.003 0 01-5 6.706V18h4a1 1 0 110 2H6a1 1 0 110-2h4v-1.294A7.003 7.003 0 013 10z"/>
+                    </svg>
+                </button>
+                <!-- Send Button -->
+                <button class="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <!-- Send Icon as SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.003 5.884l6.22 6.221a1 1 0 001.414 0l6.22-6.22a1.5 1.5 0 00-1.672-2.44L10 7.07 3.674 3.444a1.5 1.5 0 00-1.672 2.44z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

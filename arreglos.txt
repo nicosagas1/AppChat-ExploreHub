@@ -1,0 +1,16 @@
+
+Tareas: 
+
+1 - Tener todo vinculado a un repositorio de GitHub con el nombre de repositorio = "AppChat-ExploreHub"
+2 - No se pueden registrar menores de edad - arreglar
+3 - Las contraseñas deben tener mayus + minus + numero + caracter especial
+4 - Hacer una base de datos para que el sistema funcione, las tablas, etc. 
+5 - Empezar a armar una aplicacion FLASK, para poder viajar entre rutas, por ejemplo desde eñ dashboard, poder viajar hasta program technology con el clcik del boton
+6 - cuando se guarde el usaurio en la base de datos, luego del registro, quiero: que la contraseña este codificada con argon2
+
+
+
+
+tarea hecha:
+
+2
