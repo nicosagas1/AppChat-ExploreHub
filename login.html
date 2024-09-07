@@ -51,36 +51,54 @@
                 <div id="registerForm" style="display: none;">
                     <form class="space-y-4" id="registerFormElem">
                         <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" class="form-control" required>
+                            <label for="formuFirstName">First Name</label>
+                            <input type="text" id="formuFirstName" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" class="form-control" required>
+                            <label for="formuLastName">Last Name</label>
+                            <input type="text" id="formuLastName" class="form-control" required>
                         </div>
                         <div class="form-group calendar-container">
-                            <label for="dateOfBirth">Date of Birth</label>
-                            <input type="date" id="datePicker" class="form-control" aria-label="Date of Birth" required>
+                            <label for="formuDateOfBirth">Date of Birth</label>
+                            <input type="date" id="formuDateOfBirth" class="form-control" aria-label="Date of Birth" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <label for="formuEmail">Email</label>
+                            <input type="email" id="formuEmail" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="registerUsername">Username</label>
-                            <input type="text" id="registerUsername" class="form-control" required>
+                            <label for="formuRegisterUsername">Username</label>
+                            <input type="text" id="formuRegisterUsername" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="registerPassword">Password</label>
+                            <label for="formuRegisterPassword">Password</label>
                             <div class="position-relative">
-                                <input type="password" id="registerPassword" class="form-control" required>
+                                <input type="password" id="formuRegisterPassword" class="form-control" required>
                                 <i id="toggleRegisterPassword" class="fa fa-eye"></i>
+                            </div>
+                            <small class="form-text text-muted">
+                                Crea una contraseña que contenga al menos:
+                                <ul>
+                                    <li><strong>8 caracteres</strong></li>
+                                    <li><strong>1 número</strong></li>
+                                    <li><strong>1 carácter especial</strong>, por ejemplo: $, !, @, %, &</li>
+                                    <li><strong>Sin espacios iniciales ni finales</strong></li>
+                                </ul>
+                            </small>
+                            <div id="passwordError" class="text-danger mt-2" style="display: none;">
+                                La contraseña debe cumplir con los siguientes requisitos:
+                                <ul>
+                                    <li><strong>8 caracteres</strong></li>
+                                    <li><strong>1 número</strong></li>
+                                    <li><strong>1 carácter especial</strong>, por ejemplo: $, !, @, %, &</li>
+                                    <li><strong>Sin espacios iniciales ni finales</strong></li>
+                                </ul>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="verifyPassword">Verify Password</label>
+                            <label for="formuVerifyPassword">Verify Password</label>
                             <div class="position-relative">
-                                <input type="password" id="verifyPassword" class="form-control" required>
+                                <input type="password" id="formuVerifyPassword" class="form-control" required>
                                 <i id="toggleVerifyPassword" class="fa fa-eye"></i>
                             </div>
                         </div>                        
@@ -90,6 +108,7 @@
                         </div>
                     </form>
                 </div>
+                               
             </div>
             <div class="card-footer text-center">
                 <button id="toggleFormButton" class="btn btn-link">
@@ -111,11 +130,11 @@
         });
 
         // Set max date to today
-        document.getElementById('datePicker').max = new Date().toISOString().split('T')[0];
+        document.getElementById('formuDateOfBirth').max = new Date().toISOString().split('T')[0];
 
         // Validate age on form submission
         document.getElementById('registerFormElem').addEventListener('submit', function(event) {
-            const dateOfBirth = new Date(document.getElementById('datePicker').value);
+            const dateOfBirth = new Date(document.getElementById('formuDateOfBirth').value);
             const today = new Date();
             let age = today.getFullYear() - dateOfBirth.getFullYear();
             const monthDiff = today.getMonth() - dateOfBirth.getMonth();
@@ -130,11 +149,13 @@
             }
 
             // Password validation
-            const password = document.getElementById('registerPassword').value;
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            const password = document.getElementById('formuRegisterPassword').value;
+            const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
             if (!passwordRegex.test(password)) {
                 document.getElementById('passwordError').style.display = 'block';
                 event.preventDefault();
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
             }
         });
 
@@ -149,7 +170,7 @@
 
         // Show/Hide Password for Register
         document.getElementById('toggleRegisterPassword').addEventListener('click', function () {
-            const passwordInput = document.getElementById('registerPassword');
+            const passwordInput = document.getElementById('formuRegisterPassword');
             const isPasswordHidden = passwordInput.type === 'password';
             passwordInput.type = isPasswordHidden ? 'text' : 'password';
             this.classList.toggle('fa-eye');
@@ -158,7 +179,7 @@
 
         // Show/Hide Verify Password for Register
         document.getElementById('toggleVerifyPassword').addEventListener('click', function () {
-            const passwordInput = document.getElementById('verifyPassword');
+            const passwordInput = document.getElementById('formuVerifyPassword');
             const isPasswordHidden = passwordInput.type === 'password';
             passwordInput.type = isPasswordHidden ? 'text' : 'password';
             this.classList.toggle('fa-eye');
