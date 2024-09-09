@@ -4,12 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Inicio de Sesión y Registro</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Enlace al archivo CSS personalizado -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginPrinc.css') }}">
+    <style>
+        body {
+            background-image: url('https://firebasestorage.googleapis.com/v0/b/proyectochat-92fe1.appspot.com/o/loginIA.jpg?alt=media&token=5266c93a-7e76-4157-9ad5-4b9c2dddfe46');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+            display: block;
+            color: #007bff;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
 
@@ -129,7 +169,6 @@
     setMaxDate();
 </script>
 
-<!-- Bootstrap Bundle JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
