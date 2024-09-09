@@ -1,115 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Registration Form</title>
+    <title>Formulario de Inicio de Sesión y Registro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-image: url('https://firebasestorage.googleapis.com/v0/b/proyectochat-92fe1.appspot.com/o/loginIA.jpg?alt=media&token=5266c93a-7e76-4157-9ad5-4b9c2dddfe46');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-        .form-container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .form-control {
-            border-radius: 5px;
-        }
-        .btn-custom {
-            background-color: #007bff;
-            color: #ffffff;
-            border-radius: 5px;
-            padding: 10px;
-            width: 100%;
-        }
-        .btn-custom:hover {
-            background-color: #0056b3;
-        }
-        .toggle-link {
-            text-align: center;
-            margin-top: 10px;
-            display: block;
-            color: #007bff;
-        }
-        .error-message {
-            color: red;
-            font-size: 0.9em;
-        }
-    </style>
 </head>
 <body>
 
 <div class="form-container" id="loginForm">
-    <h2>Login</h2>
+    <h2>Iniciar Sesión</h2>
     <form onsubmit="return validatePassword('password')">
         <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+            <label for="username" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="username" placeholder="Ingresa tu nombre de usuario" required>
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required>
             <div class="error-message" id="loginError"></div>
         </div>
-        <button type="submit" class="btn btn-custom">Login</button>
-        <a href="#" class="toggle-link" onclick="showRegistrationForm()">Don't have an account? Register</a>
+        <button type="submit" class="btn btn-custom">Iniciar Sesión</button>
+        <a href="#" class="toggle-link" onclick="showRegistrationForm()">¿No tienes una cuenta? Regístrate</a>
     </form>
 </div>
 
 <div class="form-container" id="registrationForm" style="display:none;">
-    <h2>Register</h2>
+    <h2>Registrarse</h2>
     <form onsubmit="return validateRegistration()">
         <div class="mb-3">
-            <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+            <label for="firstName" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Ingresa tu nombre" required>
         </div>
         <div class="mb-3">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+            <label for="lastName" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Ingresa tu apellido" required>
         </div>
         <div class="mb-3">
-            <label for="dob" class="form-label">Date of Birth</label>
+            <label for="dob" class="form-label">Fecha de Nacimiento</label>
             <input type="date" class="form-control" id="dob" required>
             <div class="error-message" id="dobError"></div>
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" required>
         </div>
         <div class="mb-3">
-            <label for="regUsername" class="form-label">Username</label>
-            <input type="text" class="form-control" id="regUsername" placeholder="Choose a username" required>
+            <label for="regUsername" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="regUsername" placeholder="Elige un nombre de usuario" required>
         </div>
         <div class="mb-3">
-            <label for="regPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="regPassword" placeholder="Choose a password" required>
+            <label for="regPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="regPassword" placeholder="Elige una contraseña" required>
         </div>
         <div class="mb-3">
-            <label for="verifyPassword" class="form-label">Verify Password</label>
-            <input type="password" class="form-control" id="verifyPassword" placeholder="Re-enter your password" required>
+            <label for="verifyPassword" class="form-label">Verifica tu contraseña</label>
+            <input type="password" class="form-control" id="verifyPassword" placeholder="Reingresa tu contraseña" required>
             <div class="error-message" id="registerError"></div>
         </div>
-        <button type="submit" class="btn btn-custom">Register</button>
-        <a href="#" class="toggle-link" onclick="showLoginForm()">Already have an account? Login</a>
+        <button type="submit" class="btn btn-custom">Registrarse</button>
+        <a href="#" class="toggle-link" onclick="showLoginForm()">¿Ya tienes una cuenta? Inicia Sesión</a>
     </form>
 </div>
 
 <script>
-    // Set the maximum date for the date of birth input
     function setMaxDate() {
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('dob').setAttribute('max', today);
@@ -119,7 +73,7 @@
         const password = document.getElementById(id).value;
         const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
         if (!pattern.test(password)) {
-            document.getElementById(id === 'password' ? 'loginError' : 'registerError').textContent = 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.';
+            document.getElementById(id === 'password' ? 'loginError' : 'registerError').textContent = 'La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.';
             return false;
         }
         return true;
@@ -130,7 +84,7 @@
         const verifyPassword = document.getElementById('verifyPassword').value;
         const dob = new Date(document.getElementById('dob').value);
         const today = new Date();
-        const minAge = 18; // Minimum age requirement
+        const minAge = 18; 
         const age = today.getFullYear() - dob.getFullYear();
         const month = today.getMonth() - dob.getMonth();
         if (month < 0 || (month === 0 && today.getDate() < dob.getDate())) {
@@ -142,12 +96,12 @@
         }
 
         if (regPassword !== verifyPassword) {
-            document.getElementById('registerError').textContent = 'Passwords do not match.';
+            document.getElementById('registerError').textContent = 'Las contraseñas no coinciden.';
             return false;
         }
 
         if (age < minAge) {
-            document.getElementById('dobError').textContent = `You must be at least ${minAge} years old to register.`;
+            document.getElementById('dobError').textContent = `Debes tener al menos ${minAge} años para registrarte.`;
             return false;
         }
 
@@ -167,7 +121,6 @@
         document.getElementById('dobError').textContent = '';
     }
 
-    // Set the maximum date for the date of birth input on page load
     setMaxDate();
 </script>
 
